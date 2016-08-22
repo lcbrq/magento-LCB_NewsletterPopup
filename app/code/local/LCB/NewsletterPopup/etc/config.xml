@@ -13,6 +13,16 @@
                 </newsletterpopup>
             </updates>
         </layout>
+        <events>
+            <newsletter_subscriber_save_commit_after>
+                <observers>
+                    <newsletterpopup_model_observer>
+                        <class>LCB_NewsletterPopup_Model_Observer</class>
+                        <method>subscribedToNewsletter</method>
+                    </newsletterpopup_model_observer>
+                </observers>
+            </newsletter_subscriber_save_commit_after>
+        </events>
     </frontend>
     <global>
         <helpers>
@@ -25,5 +35,10 @@
                 <class>LCB_NewsletterPopup_Block</class>
             </newsletterpopup>
         </blocks>
+        <models>
+            <newsletterpopup>
+                <class>LCB_NewsletterPopup_Model</class>
+            </newsletterpopup>
+        </models>
     </global>
 </config> 
