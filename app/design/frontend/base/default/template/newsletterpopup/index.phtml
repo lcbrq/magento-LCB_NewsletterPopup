@@ -1,0 +1,47 @@
+<!-- NEWSLETTER POPUP -->
+<?php
+if (!Mage::getModel('core/cookie')->get('newsletterPopupShown')):
+    Mage::getModel('core/cookie')->set('newsletterPopupShown', 'true', 3600);
+    ?>
+
+    <div style="display:none;">
+        <div id="newsletter-popup" class="container">
+            <div class="sub-container">
+                <div class="content">
+                    <div class="title">
+                        <h1 style="font-size: 23px;"><?php echo $this->__('Sign up to our newsletter'); ?></h1>
+                    </div>
+
+                    <div class="register-form">
+                        <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+                            <div class="newsletter_popup_form">
+                                <div class="input-group">                
+                                    <input type="text" name="email" id="newsletter" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sign up for our newsletter')) ?>" placeholder="<?php echo $this->__('Your E-mail'); ?>" class="input-text required-entry validate-email " />
+                                    <span class="input-group-btn">
+                                        <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe')) ?>" class="button"><span><span><?php echo $this->__('Sign up') ?></span></span></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        jQuery.fancybox({
+            'width': '900',
+            'height': 'auto',
+            'autoDimensions': false,
+            'autoScale': false,
+            'autoSize': false,
+            'showCloseButton': true,
+            'type': 'inline',
+            'href': '#newsletter-popup'
+        });
+
+        var newsletterSubscriberFormDetail = new VarienForm('newsletter-refistration-form', true);
+    </script>
+<?php endif; ?>

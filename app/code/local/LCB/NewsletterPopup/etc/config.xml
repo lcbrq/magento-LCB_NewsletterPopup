@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <LCB_NewsletterPopup>
+            <version>0.1.0</version>
+        </LCB_NewsletterPopup>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <newsletterpopup>
+                    <file>newsletterpopup.xml</file>
+                </newsletterpopup>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <helpers>
+            <newsletterpopup>
+                <class>LCB_NewsletterPopup_Helper</class>
+            </newsletterpopup>
+        </helpers>
+        <blocks>
+            <newsletterpopup>
+                <class>LCB_NewsletterPopup_Block</class>
+            </newsletterpopup>
+        </blocks>
+    </global>
+</config> 

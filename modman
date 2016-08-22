@@ -1,0 +1,5 @@
+app/code/local/LCB/NewsletterPopup                              app/code/local/LCB/NewsletterPopup
+app/design/frontend/base/default/layout/newsletterpopup.xml     app/design/frontend/base/default/layout/newsletterpopup.xml
+app/design/frontend/base/default/template/newsletterpopup       app/design/frontend/base/default/template/newsletterpopup
+app/etc/modules/LCB_NewsletterPopup.xml                         app/etc/modules/LCB_NewsletterPopup.xml
+skin/frontend/base/default/css/newsletterpopup.css              skin/frontend/base/default/css/newsletterpopup.css

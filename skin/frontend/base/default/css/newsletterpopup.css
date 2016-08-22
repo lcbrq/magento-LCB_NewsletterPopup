@@ -1,0 +1,76 @@
+/* ==========================================================================================
+                            NEwSLETTER POPUP                                             
+============================================================================================*/
+#newsletter-popup {
+    background-color: #fff;
+    padding: 35px;
+    width: 900px;
+    text-align: center;
+}
+
+#newsletter-popup hr {
+    border-top: 2px dotted #eee;
+    width: 44%;
+    margin: 20px auto;
+}
+
+#newsletter-popup h2 {
+    color: #97a1a8;
+}
+
+#newsletter-popup figure img {
+    width: 35%;
+    padding: 10px 0;
+}
+
+#newsletter-popup .input-group {
+    width: 528px;
+    margin: 0px auto;
+}
+
+#newsletter-popup .input-group input {
+    width: 352px;
+    padding: 16px;
+    line-height: 21px;
+}
+
+#newsletter-popup .input-group input,
+#newsletter-popup .input-group .input-group-btn .button span {
+    font-size: 17px;
+}
+
+#newsletter-popup .input-group .input-group-btn .button span {
+    background-color: #a8a9ab;
+    text-transform: none;
+    padding: 9px 25px;
+}
+/*============================================================================================
+                            RESPONSIVE
+=============================================================================================*/
+@media (max-width: 992px){
+    #newsletter-popup {
+         width: auto;
+    }
+    
+    #newsletter-popup .input-group{
+        max-width: 200px;
+    }
+    
+    #newsletter-popup .input-group input {
+        max-width: 150px;
+        padding: 16px 5px;
+    }
+    
+    #newsletter-popup .input-group input,
+    #newsletter-popup .input-group-btn .button span {
+        font-size: 16px;
+    } 
+    
+    #newsletter-popup .input-group-btn .button span {
+        padding: 9px 10px!important;
+    }
+    
+    .fancybox-wrap {
+        top: 243px;
+    }
+}
