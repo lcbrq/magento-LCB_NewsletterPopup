@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <lamarq  translate="label" module="newsletterpopup">            
+            <groups>
+                <lamarq_newsletter translate="label"> 
+                    <label>Newsletter Popup Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable_disable translate="label">
+                            <label>Włącz/Wyłącz</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>-1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                        </enable_disable>
+                        <discount_name translate="label">
+                            <label>Nazwa Reguły</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Nazwa nowej reguły - UWAGA! zastąpienie obecnej nazwy nie spowoduje usunięcie poprzedniej reguły!</comment>
+                            <validate>required-entry</validate>
+                            <depends>
+                                <enable_disable>1</enable_disable>
+                            </depends>
+                        </discount_name>
+                        <discount_ammount translate="label">
+                            <label>Procent zniżki</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <depends>
+                                <enable_disable>1</enable_disable>
+                            </depends>
+                        </discount_ammount>
+                        <discount_website translate="label">
+                            <label>Website</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>adminhtml/system_config_source_website</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <depends>
+                                <enable_disable>1</enable_disable>
+                            </depends>
+                        </discount_website>
+                        <discount_code_format translate="label">
+                            <label>Format Kuponu</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>newsletterpopup/discount</source_model>
+                            <depends>
+                                <enable_disable>1</enable_disable>
+                            </depends>
+                        </discount_code_format>
+                        <discount_code_lenght translate="label">
+                            <label>Długość kuponu</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <depends>
+                                <enable_disable>1</enable_disable>
+                            </depends>
+                        </discount_code_lenght>
+                        <discount_code_prefix translate="label">
+                            <label>Prefix kuponu</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable_disable>1</enable_disable>
+                            </depends>
+                        </discount_code_prefix>
+                        <discount_code_sufix translate="label">
+                            <label>Sufix kuponu</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable_disable>1</enable_disable>
+                            </depends>
+                        </discount_code_sufix>
+                        <discount_code_usage translate="label">
+                            <label>Ilość użyć</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <depends>
+                                <enable_disable>1</enable_disable>
+                            </depends>
+                            <comment>Ilość użyć kuponu</comment>
+                        </discount_code_usage>
+                    </fields>
+                </lamarq_newsletter>
+            </groups>
+        </lamarq>
+    </sections>
+</config>
