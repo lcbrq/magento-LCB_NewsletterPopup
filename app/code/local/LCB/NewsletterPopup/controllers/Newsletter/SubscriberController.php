@@ -25,10 +25,7 @@ class LCB_NewsletterPopup_Newsletter_SubscriberController extends Mage_Newslette
                     Mage::throwException($this->__('Sorry, but administrator denied subscription for guests. Please <a href="%s">register</a>.', Mage::helper('customer')->getRegisterUrl()));
                 }
 
-                $ownerId = Mage::getModel('customer/customer')
-                        ->setWebsiteId(Mage::app()->getStore()->getWebsiteId())
-                        ->loadByEmail($email)
-                        ->getId();
+                $ownerId = Mage::getModel('newsletter/subscriber')->loadByEmail($email)->getId();              
                 if ($ownerId !== null && $ownerId != $customerSession->getId()) {
                     Mage::throwException($this->__('This email address is already assigned to another user.'));
                 }
