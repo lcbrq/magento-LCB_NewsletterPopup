@@ -14,8 +14,8 @@ class LCB_NewsletterPopup_Helper_Data extends Mage_Core_Helper_Abstract {
      * Check if particular rule exists
      */
     public function checkIfRuleExists() {
-        if (Mage::getStoreConfig('lamarq/lamarq_newsletter/enable_disable')) {
-            $RoleName = Mage::getStoreConfig('lamarq/lamarq_newsletter/discount_name');
+        if (Mage::getStoreConfig('general/popup_newsletter/enable_disable')) {
+            $RoleName = Mage::getStoreConfig('general/popup_newsletter/discount_name');
             $couponCode = null;
             $rules = Mage::getModel('salesrule/rule')->getCollection()
                     ->addFieldToFilter('name', array('in' => $RoleName));
@@ -37,8 +37,8 @@ class LCB_NewsletterPopup_Helper_Data extends Mage_Core_Helper_Abstract {
      * Create new rule
      */
     public function createShoppingCartRule($ruleName) {
-        $actionType = 'by_percent';
-        $discount = Mage::getStoreConfig('lamarq/lamarq_newsletter/discount_ammount');
+        $actionType = Mage_SalesRule_Model_Rule::BY_PERCENT_ACTION;
+        $discount = Mage::getStoreConfig('general/popup_newsletter/discount_ammount');
         $groupIds = [0]; //0 is non-logged group
 
         $customerGroups = Mage::helper('customer')->getGroups();
@@ -46,7 +46,7 @@ class LCB_NewsletterPopup_Helper_Data extends Mage_Core_Helper_Abstract {
             array_push($groupIds, $group->getId());
         }
         
-        $websitesIds = explode(',',Mage::getStoreConfig('lamarq/lamarq_newsletter/discount_website'));
+        $websitesIds = explode(',',Mage::getStoreConfig('general/popup_newsletter/discount_website'));
 
         $shoppingCartPriceRule = Mage::getModel('salesrule/rule');
 
@@ -76,7 +76,7 @@ class LCB_NewsletterPopup_Helper_Data extends Mage_Core_Helper_Abstract {
         $rule = Mage::getModel('salesrule/rule')->load($ruleId);
 
         $generator = Mage::getModel('salesrule/coupon_massgenerator');
-        $format = Mage::getStoreConfig('lamarq/lamarq_newsletter/discount_code_format');
+        $format = Mage::getStoreConfig('general/popup_newsletter/discount_code_format');
         
         if($format == 'alphanum'){
             $generator->setFormat(Mage_SalesRule_Helper_Coupon::COUPON_FORMAT_ALPHANUMERIC);
@@ -87,15 +87,15 @@ class LCB_NewsletterPopup_Helper_Data extends Mage_Core_Helper_Abstract {
         }
         
         $generator->setDash('');
-        $generator->setLength(Mage::getStoreConfig('lamarq/lamarq_newsletter/discount_code_lenght'));
-        $generator->setPrefix(Mage::getStoreConfig('lamarq/lamarq_newsletter/discount_code_prefix'));
-        $generator->setSuffix(Mage::getStoreConfig('lamarq/lamarq_newsletter/discount_code_sufix'));
+        $generator->setLength(Mage::getStoreConfig('general/popup_newsletter/discount_code_lenght'));
+        $generator->setPrefix(Mage::getStoreConfig('general/popup_newsletter/discount_code_prefix'));
+        $generator->setSuffix(Mage::getStoreConfig('general/popup_newsletter/discount_code_sufix'));
 
         $rule->setCouponCodeGenerator($generator);
         $rule->setCouponType(Mage_SalesRule_Model_Rule::COUPON_TYPE_AUTO);
 
         $coupon = $rule->acquireCoupon();
-        $coupon->setUsageLimit(Mage::getStoreConfig('lamarq/lamarq_newsletter/discount_code_usage'));
+        $coupon->setUsageLimit(Mage::getStoreConfig('general/popup_newsletter/discount_code_usage'));
         $coupon->setTimesUsed(0);
         $coupon->setType(1);
         $coupon->save();

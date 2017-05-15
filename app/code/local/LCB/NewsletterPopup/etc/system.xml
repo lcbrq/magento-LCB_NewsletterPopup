@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <config>
     <sections>
-        <lamarq  translate="label" module="newsletterpopup">            
+        <general  translate="label" module="newsletterpopup">            
             <groups>
-                <lamarq_newsletter translate="label"> 
+                <popup_newsletter translate="label"> 
                     <label>Newsletter Popup Options</label>
                     <frontend_type>text</frontend_type>
-                    <sort_order>0</sort_order>
+                    <sort_order>9999</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
@@ -119,8 +119,8 @@
                             <comment>Ilość użyć kuponu</comment>
                         </discount_code_usage>
                     </fields>
-                </lamarq_newsletter>
+                </popup_newsletter>
             </groups>
-        </lamarq>
+        </general>
     </sections>
 </config>
