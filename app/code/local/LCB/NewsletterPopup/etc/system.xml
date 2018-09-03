@@ -96,18 +96,19 @@
                                 <enable_disable>1</enable_disable>
                             </depends>
                         </discount_website>
+
                         <discount_code_format translate="label">
                             <label>Format Kuponu</label>
-                            <frontend_type>select</frontend_type>
+                            <frontend_type>text</frontend_type>
                             <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                            <source_model>newsletterpopup/discount</source_model>
                             <depends>
                                 <enable_disable_coupon>1</enable_disable_coupon>
                             </depends>
                         </discount_code_format>
+
                         <discount_code_lenght translate="label">
                             <label>Długość kuponu</label>
                             <frontend_type>text</frontend_type>
