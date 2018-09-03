@@ -1,4 +1,5 @@
 <!-- NEWSLETTER POPUP -->
+<?php if (Mage::getStoreConfig('general/popup_newsletter/enable_disable') && Mage::getStoreConfig('general/popup_newsletter/enable_disable_popup')) {  //Check if module is enabled and if showing popup is enabled?>
 <?php
 if (!Mage::getModel('core/cookie')->get('newsletterPopupShown')):
     Mage::getModel('core/cookie')->set('newsletterPopupShown', 'true', 3600);
@@ -45,3 +46,4 @@ if (!Mage::getModel('core/cookie')->get('newsletterPopupShown')):
         var newsletterSubscriberFormDetail = new VarienForm('newsletter-refistration-form', true);
     </script>
 <?php endif; ?>
+<?php } ?>
