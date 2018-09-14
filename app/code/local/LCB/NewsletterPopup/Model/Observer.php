@@ -1,7 +1,14 @@
 <?php
 
+/**
+ * Class LCB_NewsletterPopup_Model_Observer
+ */
 class LCB_NewsletterPopup_Model_Observer {
 
+    /**
+     * @param \Varien_Event_Observer $observer
+     * @return \Varien_Event_Observer
+     */
     public function subscribedToNewsletter(Varien_Event_Observer $observer)
     {
         $event = $observer->getEvent();

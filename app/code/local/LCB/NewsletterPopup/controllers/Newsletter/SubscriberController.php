@@ -1,5 +1,9 @@
 <?php
-require_once "Mage/Newsletter/controllers/SubscriberController.php";  
+require_once "Mage/Newsletter/controllers/SubscriberController.php";
+
+/**
+ * Class LCB_NewsletterPopup_Newsletter_SubscriberController
+ */
 class LCB_NewsletterPopup_Newsletter_SubscriberController extends Mage_Newsletter_SubscriberController{
 
     public function postDispatch()
@@ -8,6 +12,7 @@ class LCB_NewsletterPopup_Newsletter_SubscriberController extends Mage_Newslette
         Mage::dispatchEvent('controller_action_postdispatch_adminhtml', array('controller_action' => $this));
     }
 
+    
     public function newAction()
     {
         if ($this->getRequest()->isPost() && $this->getRequest()->getPost('email')) {

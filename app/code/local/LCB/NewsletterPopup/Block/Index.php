@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class LCB_NewsletterPopup_Block_Index
+ */
 class LCB_NewsletterPopup_Block_Index extends Mage_Core_Block_Template {
     
     /**

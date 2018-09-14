@@ -5,7 +5,11 @@
             <version>0.1.0</version>
         </LCB_NewsletterPopup>
     </modules>
+
+    <!-- Frontend -->
     <frontend>
+
+        <!-- Layout -->
         <layout>
             <updates>
                 <newsletterpopup>
@@ -13,6 +17,8 @@
                 </newsletterpopup>
             </updates>
         </layout>
+
+        <!-- Events -->
         <events>
             <newsletter_subscriber_save_commit_after>
                 <observers>
@@ -23,6 +29,8 @@
                 </observers>
             </newsletter_subscriber_save_commit_after>
         </events>
+
+        <!-- Routers -->
         <routers>
             <newsletterpopup>
                 <use>standard</use>
@@ -32,30 +40,44 @@
                 </args>
             </newsletterpopup>
         </routers>
+
     </frontend>
+
+    <!-- Global -->
     <global>
+
+        <!-- Controllers -->
         <rewrite>
             <newsletterpopup_newsletter_subscribercontroller>
                 <from>#^/newsletter/subscriber/#</from><!-- Mage_Newsletter_SubscriberController  -->
                 <to>/newsletterpopup/newsletter_subscriber/</to><!-- LCB_NewsletterPopup_Newsletter_SubscriberController-->
             </newsletterpopup_newsletter_subscribercontroller>
         </rewrite>
+
+        <!-- Helpers -->
         <helpers>
             <newsletterpopup>
                 <class>LCB_NewsletterPopup_Helper</class>
             </newsletterpopup>
         </helpers>
+
+        <!-- Blocks -->
         <blocks>
             <newsletterpopup>
                 <class>LCB_NewsletterPopup_Block</class>
             </newsletterpopup>
         </blocks>
+
+        <!-- Models -->
         <models>
             <newsletterpopup>
                 <class>LCB_NewsletterPopup_Model</class>
             </newsletterpopup>
         </models>
+
     </global>
+
+    <!-- Admin -->
     <admin>
         <routers>
             <newsletterpopup>
