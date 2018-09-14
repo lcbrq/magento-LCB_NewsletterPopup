@@ -23,8 +23,23 @@
                 </observers>
             </newsletter_subscriber_save_commit_after>
         </events>
+        <routers>
+            <newsletterpopup>
+                <use>standard</use>
+                <args>
+                    <module>LCB_NewsletterPopup</module>
+                    <frontName>newsletterpopup</frontName>
+                </args>
+            </newsletterpopup>
+        </routers>
     </frontend>
     <global>
+        <rewrite>
+            <newsletterpopup_newsletter_subscribercontroller>
+                <from>#^/newsletter/subscriber/#</from><!-- Mage_Newsletter_SubscriberController  -->
+                <to>/newsletterpopup/newsletter_subscriber/</to><!-- LCB_NewsletterPopup_Newsletter_SubscriberController-->
+            </newsletterpopup_newsletter_subscribercontroller>
+        </rewrite>
         <helpers>
             <newsletterpopup>
                 <class>LCB_NewsletterPopup_Helper</class>
@@ -41,4 +56,15 @@
             </newsletterpopup>
         </models>
     </global>
+    <admin>
+        <routers>
+            <newsletterpopup>
+                <use>admin</use>
+                <args>
+                    <module>LCB_NewsletterPopup</module>
+                    <frontName>admin_newsletterpopup</frontName>
+                </args>
+            </newsletterpopup>
+        </routers>
+    </admin>
 </config> 
